@@ -38,6 +38,8 @@
         <!-- AUDIO -->
         <!--<audio id="fireCrackling-snd" src="/worlds/hub/assets/audio/fire.mp3" preload="true"></audio>-->
         <audio id="hub_music-snd" src="/worlds/Spatium_Hub/assets/the_past_music.mp3" preload="true"></audio>
+        <audio id="welcome-snd" src="/worlds/Spatium_Hub/assets/1_welcome.mp3" preload="true"></audio>
+
 
         <!-- Circles' built-in assets [REQUIRED] -->
         <circles-assets/>
@@ -129,7 +131,9 @@
 
       <!-- sound -->
 
-      <a-entity position=" 5 1 -10" circles-sound="type:ambient; src:#hub_music-snd; autoplay:true; loop:true; volume:1.0;" ></a-entity>
+      <a-entity position=" 5 1 -10" circles-sound="type:ambient; src:#hub_music-snd; autoplay:true; loop:true; volume:0.1;" ></a-entity>
+      <a-entity position=" 5 1 -10" circles-sound="type:ambient; src:#welcome-snd; autoplay:true; loop:false; volume:0.7;" ></a-entity>
+
 
       <!-- sky and lights -->
       <a-entity light="type: hemisphere; color:#0E192B; groundColor:#1D0A57; intensity: 1.2"></a-entity>
