@@ -23,6 +23,7 @@
       
         <!-- 360 -->
         <img id='link_1_360'        src='/global/images/Campfire_Screen.jpg' crossorigin="anonymous">
+        <a-asset-item id="past_room-gltf" src="/worlds/Spatium_Present/assets/models/pastroom.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
 
         <a-asset-item id="earth-gltf" src="/worlds/Spatium_Present/assets/models/earth.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id="mars-gltf" src="/worlds/Spatium_Present/assets/models/mars.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
@@ -61,13 +62,12 @@
       <circles-manager-avatar/>
 
       <!-- checkpoints -->
-      <a-entity circles-checkpoint circles-spawnpoint position="15 0.05 -2.0"></a-entity>
-      <a-entity circles-checkpoint circles-spawnpoint position="6 0.05 -7.5"></a-entity>
-
-      <a-entity circles-checkpoint circles-spawnpoint position="-1.0 0.05 -3"></a-entity>
-      <a-entity circles-checkpoint circles-spawnpoint position="-3.88 0.05 3.7"></a-entity>
-      <a-entity circles-checkpoint circles-spawnpoint position="16.5 0.05 4.6"></a-entity>
-      <a-entity circles-checkpoint circles-spawnpoint position="6.549 0.05 7.2"></a-entity>
+      <a-entity circles-checkpoint circles-spawnpoint position="6 0.05 -31.2"></a-entity>
+      <a-entity circles-checkpoint circles-spawnpoint position="15.2 0.05 -35"></a-entity>
+      <a-entity circles-checkpoint circles-spawnpoint position="-3.88 0.05 -35"></a-entity>
+      <a-entity circles-checkpoint circles-spawnpoint position="-4.5 0.05 -50"></a-entity>
+      <a-entity circles-checkpoint circles-spawnpoint position="6 0.05 -59"></a-entity>
+      <a-entity circles-checkpoint circles-spawnpoint position="16.5 0.05 -50"></a-entity>
 
       <!-- sky and lights -->
       <a-entity light="type:ambient; color:#FFF; intensity:1.0"></a-entity>
@@ -76,11 +76,17 @@
     
 
       <!-- environment / models -->
+      <a-entity id="Room_Model" gltf-model="#past_room-gltf"  img src="/worlds/Spatium_Past/file14.png" img src="/worlds/Spatium_Past/file13.png" img src="/worlds/Spatium_Past/file15.png" img src="/worlds/Spatium_Past/file16.png" circles-sphere-env-map="src:/global/assets/textures/equirectangular/WhiteBlue.jpg"  position="5.919 0 1.291" scale="25 25 25"></a-entity>
+
+      <a-entity id="hub_link"
+      position="6 3.5 -45" rotation="0 180 0" scale="1 1 1"
+      
+      circles-portal="img_src:#link_1_360; title_text:Space Defender; link_url:/w/Spatium_ShooterGame"></a-entity>
      
 
       <!-- artefacts -->
       <a-entity id="Artefact-Earth"
-                position="15 1.5 -4.0" rotation="0 30 0" scale="15 15 15"
+                position="13.5 1.5 -50" rotation="0 30 0" scale="15 15 15"
                 gltf-model="#earth-gltf"
                 shadow="receive:false; cast:false;"
                 circles-sphere-env-map="src:/global/assets/textures/equirectangular/WhiteBlue.jpg"
@@ -95,7 +101,7 @@
 
       <a-entity id="Artefact-Moxie"
                 class="interactive narrative"
-                position="6 0.8 -9.5" rotation="0 30 0" scale="15 15 15"               
+                position="-1.7 2 -50" rotation="0 30 0" scale="15 15 15"               
                 gltf-model="#moxie-gltf"
                 shadow="receive:false; cast:false;"
                 circles-sphere-env-map="src:/global/assets/textures/equirectangular/WhiteBlue.jpg"
@@ -111,7 +117,7 @@
                                   
       <a-entity id="Artefact-JamesWebb"
                 class="interactive narrative"
-                position="-1.0 1.5 -5" rotation="0 30 0" scale="15 15 15"               
+                position="6 1.5 -34.2" rotation="0 30 0" scale="15 15 15"               
                 gltf-model="#jameswebb-gltf"
                 shadow="receive:false; cast:false;"
                 circles-sphere-env-map="src:/global/assets/textures/equirectangular/WhiteBlue.jpg"
@@ -119,14 +125,14 @@
                                   label_visible:true; label_offset:0 0.35 0; arrow_position:down;
                                   title:James Webb; 
                                   description:James Edwin Webb '(1902-1992)' was an American government official that led NASA from the beginning of the Kennedy administration to the end of the Johnson administration. He helped oversee the Mercury and Gemini programs days before the Apollo 11 mission.;
-                                  title_back:Telescope
+                                  title_back:Telescope;
                                   description_back:Named after him in 2020, the James Webb Space Telescope was launched on December 25th, 2021 and was designed to answer questions about the Universe and make discoveries in astronomy.;
                                   label_text:James Webb;
                                   audio:#Narr_safety-snd; volume:0.4;"></a-entity>
 
       <a-entity id="Artefact-MarsRover"
                 class="interactive narrative"
-                position="-3.88 1.5 6.7" rotation="0 30 0" scale="15 15 15"               
+                position="6 0.8 -56" rotation="0 30 0" scale="15 15 15"               
                 gltf-model="#marsrover-gltf"
                 shadow="receive:false; cast:false;"
                 circles-sphere-env-map="src:/global/assets/textures/equirectangular/WhiteBlue.jpg"
@@ -141,7 +147,7 @@
 
       <a-entity id="Artefact-Moon"
                 class="interactive narrative"
-                position="16.5 0.8 6.6" rotation="0 30 0" scale="15 15 15"               
+                position="15.5 1.0 -39" rotation="0 30 0" scale="15 15 15"               
                 gltf-model="#moon-gltf"
                 shadow="receive:false; cast:false;"
                 circles-sphere-env-map="src:/global/assets/textures/equirectangular/WhiteBlue.jpg"
@@ -155,29 +161,19 @@
                                   audio:#Narr_safety-snd; volume:0.4;"></a-entity>
 
       <a-entity id="Artefact-Mars"
-                position="6.549 2.5 11.2" rotation="0 30 0" scale="15 15 15"
+                position="-3.88 1.0 -39" rotation="0 30 0" scale="15 15 15"
                 gltf-model="#mars-gltf"
                 shadow="receive:false; cast:false;"
                 circles-sphere-env-map="src:/global/assets/textures/equirectangular/WhiteBlue.jpg"
                 circles-artefact="inspectScale:9 9 9; textRotationY:0; textLookAt:false; inspectRotation:0 90 0; inspectOffsetY:-0.2;
                                   label_visible:true; label_offset:0 0.4 0; arrow_position:down;
-                                  title:Planet Earth; 
+                                  title:Planet Mars; 
                                   description:The fourth planet from the Sun, Mars is a cold and dusty deserted planet with seasons, polar ice caps, canyons, and extinct volcanoes. It is one of the most explored bodies in our solar system.;
                                   title_back:Interesting Facts;
                                   description_back:There are no rings around Mars, one day on Mars takes a little over 24 hours, and Mars has two moons named Phobos and Deimos.;
                                   label_text:Mars;
                                   audio:#Narr_culture-snd; volume:0.4;"></a-entity>
-                                
-
-
-
-    
-    <a-entity id="hub_link"
-                position="6.549 1.347 4.864" rotation="0 143.672 0"  scale="1 1 1"
-                circles-portal="img_src:#link_1_360; title_text:Spatium Hub; link_url:/w/Spatium_Hub"></a-entity>
-
-    <a-entity id="presentroom_model" gltf-model="#presentroom-gltf" circles-sphere-env-map="src:/global/assets/textures/equirectangular/WhiteBlue.jpg"  position="5.919 0 1.291" scale="25 25 25"></a-entity>
-
+                              
 
     <!-- Circles' end scripts [REQUIRED] -->
     <circles-end-scripts/>
