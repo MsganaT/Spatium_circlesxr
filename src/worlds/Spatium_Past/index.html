@@ -27,7 +27,7 @@
 
         <!-- physical environment -->
         <!-- 360 -->
-        <img id='link_1_360'        src='/global/images/Campfire_Screen.jpg' crossorigin="anonymous">
+        <img id='link_1_360'        src='/worlds/Spatium_Hub/hub.png' crossorigin="anonymous">
 
        <!-- <a-asset-item id="navmesh_gltf" src="/worlds/WIT_1_Kitchen/assets/models/wit-1-nav.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>-->
 
@@ -45,6 +45,11 @@
 
         <!-- audio -->
         <audio id="hub_music-snd" src="/worlds/Spatium_Hub/assets/the_past_music.mp3" preload="true"></audio>
+        <audio id="past_music-snd" src="/worlds/Spatium_Past/assets/audio/3_past.mp3" preload="true"></audio>
+        <audio id="galileo-snd" src="/worlds/Spatium_Past/assets/audio/4_ThePast.mp3"></audio>
+        <audio id="apollo7-snd" src="/worlds/Spatium_Past/assets/audio/5_ThePastPart2.mp3"></audio>
+
+
 
         <!-- Circles' built-in assets [REQUIRED] -->
         <circles-assets/>
@@ -74,7 +79,9 @@
 
       <!-- sounds -->
 
-      <a-entity position=" 5 1 -10" circles-sound="type:ambient; src:#hub_music-snd; autoplay:true; loop:true; volume:1.0;" ></a-entity>
+      <a-entity position=" 5 1 -10" circles-sound="type:ambient; src:#hub_music-snd; autoplay:true; loop:true; volume:0.2;" ></a-entity>
+      <a-entity position=" 5 1 -10" circles-sound="type:ambient; src:#past_music-snd; autoplay:true; loop:false; volume:1.0;" ></a-entity>
+
       
       <!-- environment / models -->
      <a-entity id="Room_Model" gltf-model="#past_room-gltf"  img src="/worlds/Spatium_Past/file14.png" img src="/worlds/Spatium_Past/file13.png" img src="/worlds/Spatium_Past/file15.png" img src="/worlds/Spatium_Past/file16.png" circles-sphere-env-map="src:/global/assets/textures/equirectangular/WhiteBlue.jpg"  position="5.919 0 1.291" scale="25 25 25"></a-entity>
@@ -115,6 +122,8 @@
                                   title_back:Galileo's Discovery;
                                   description_back: Galileo discovered many elements of space such as craters on the moon, the phases of Venus, Jupiter's moons, the Milky Way stars, and the first pendulum clock.;
                                   label_text:Galileo;
+                                  audio:#galileo-snd;
+                                  volume:0.3;
                                   "></a-entity>
 
       <a-entity id="Artefact-Flag"
@@ -171,6 +180,8 @@
                                   title_back:Apollo 11 on the Moon;
                                   description_back:The Apollo 11 spaceship was on the Moon for more than 21 hours.;
                                   label_text:Apollo;
+                                  audio:#apollo7-snd;
+                                  volume:0.3;
                                   "></a-entity>
                   
       
