@@ -5,7 +5,9 @@
   <meta charset="utf-8">
   <title>Trivia Game</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
- <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>   
+ <!--<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>   -->
+  <!-- Circles' head scripts [REQUIRED] -->
+  <circles-start-scripts/>
  
 
   <style>
@@ -49,7 +51,24 @@
 
 <body>
 
+ <!-- this is used to create our enter UI that creates a 2D overlay to capture a user gesture for sound/mic access etc. -->
+ <circles-start-ui/>
 
+ <!-- a-scene with 'circles-properties' component [REQUIRED] -->
+ <a-scene circles_scene_properties>
+   <a-assets>
+
+     <!-- Circles' built-in assets [REQUIRED] -->
+     <circles-assets/>
+   </a-assets>
+
+   <!-- Circles' built-in manager and avatar [REQUIRED] -->
+   <circles-manager-avatar/>
+ </a-scene>
+
+ <!-- Circles' end scripts [REQUIRED] -->
+ <circles-end-scripts/>
+ 
   <script>
 
 let score = 0;
@@ -189,13 +208,7 @@ answerEntities.forEach((entity) => {
 
 
 });
-
-
-        
-
 }
-  
-
 }
 
 
@@ -327,10 +340,9 @@ AFRAME.registerComponent("check-answer", {
 
   <a-entity id="hub_link"
                 position="1 2 0" rotation="0 180 0" scale="1 1 1"
-                
                 circles-portal="img_src:#link_1_360; title_text:Spatium Hub; link_url:/w/Spatium_Hub"></a-entity>
-                
   <a-entity position="0 1.6 -2">
+
     <a-sound src="triviamusic.mp3" autoplay="true"></a-sound>
   </a-entity>
 
