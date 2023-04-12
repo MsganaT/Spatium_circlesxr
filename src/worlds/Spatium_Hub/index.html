@@ -25,9 +25,9 @@
         <!-- assets -->
 
         <!-- 360 -->
-        <img id='link_1_360'        src='/global/images/WIT_1_Screen.jpg' crossorigin="anonymous">
-        <img id='link_2_360'        src='/global/images/WIT_2_Screen.jpg' crossorigin="anonymous">
-        <img id='link_3_360'        src='/global/images/WIT_3_Screen.jpg' crossorigin="anonymous">
+        <img id='link_1_360'        src='/worlds/Spatium_Hub/hub.png' crossorigin="anonymous">
+        <img id='link_2_360'        src='/worlds/Spatium_Hub/present.png' crossorigin="anonymous">
+        <img id='link_3_360'        src='/worlds/Spatium_Hub/past.png' crossorigin="anonymous">
 
   
         <a-asset-item id="campfire-gltf"  src="/worlds/Spatium_Hub/button.glb" response-type="arraybuffer"></a-asset-item>
@@ -71,7 +71,7 @@
       <!-- links to other worlds -->
       <a-entity id="link_1"
                 position="5 3 -13" rotation="0 56.215 0" scale="0.0001 0.0001 0.0001"
-                circles-portal="img_src:#link_1_360; title_text:The Past; link_url:/w/Spatium_Past"
+                circles-portal="img_src:#link_3_360; title_text:The Past; link_url:/w/Spatium_Past"
                 animation__fireon="property:scale; isRawProperty:true; startEvents:startFireAnim; elasticity:150; autoplay:false; delay:0; dir:normal; dur:1000; easing:easeOutElastic; loop:false; from:0.0001 0.0001 0.0001; to:0.5 0.5 0.5;"
                 animation__fireoff="property:scale; isRawProperty:true; startEvents:stopFireAnim; autoplay:false; delay:0; dir:normal; dur:800; easing:easeOutExpo; loop:false; from:0.5 0.5 0.5; to:0.0001 0.0001 0.0001;"
                 shadow></a-entity>
@@ -88,7 +88,7 @@
 
       <a-entity id="link_3"
                 position="2 3 -9" rotation="0 -40 0" scale="0.0001 0.0001 0.0001"
-                circles-portal="img_src:#link_3_360; title_text:The Future; link_url:/w/Spatium_Future"
+                circles-portal="img_src:#link_1_360; title_text:The Future; link_url:/w/Spatium_Future"
                 animation__fireon="property:scale; isRawProperty:true; startEvents:startFireAnim; elasticity:150; autoplay:false; delay:0; dir:normal; dur:1000; easing:easeOutElastic; loop:false; from:0.0001 0.0001 0.0001; to:0.5 0.5 0.5;"
                 animation__fireoff="property:scale; isRawProperty:true; startEvents:stopFireAnim; autoplay:false; delay:0; dir:normal; dur:800; easing:easeOutExpo; loop:false; from:0.5 0.5 0.5; to:0.0001 0.0001 0.0001;"
                 shadow></a-entity>
