@@ -2,11 +2,11 @@ AFRAME.registerComponent('attach-gun', {
     init: function() {
         
         // locks movement attaches gun to player camera
-        CIRCLES.getAvatarRigElement().setAttribute('movement-controls', {enabled:false});
-        CIRCLES.getMainCameraElement().setAttribute('shooter','');
-        CIRCLES.getMainCameraElement().setAttribute('click-to-shoot', '');
+        CIRCLES.getAvatarRig().setAttribute('movement-controls', {enabled:false});
+        CIRCLES.getMainCamera().setAttribute('shooter','');
+        CIRCLES.getMainCamera().setAttribute('click-to-shoot', '');
         var cursorAttachment = document.querySelector('#cursor');
-        CIRCLES.getMainCameraElement().appendChild(cursorAttachment);
+        CIRCLES.getMainCamera().appendChild(cursorAttachment);
         
             /** 
             CIRCLES.getCirclesSceneElement().addEventListener(CIRCLES.EVENTS.READY, function() {
