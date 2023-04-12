@@ -13,11 +13,16 @@
             color.addScalar(0.05);
             el.components.material.material.color.copy(color);
           });
-  
+         
+        
           el.addEventListener('die', () => {
             color.setRGB(1, 0, 0);
             el.components.material.material.color.copy(color);
             el.setAttribute('visible', false);
+            el.parentNode.removeChild(el);
+         
+           // el.object3D.position.y = this.hidingPos;
+            //this.stop();
           });
         }
       });
