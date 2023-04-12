@@ -44,6 +44,8 @@
         <audio id="Amb_fan-snd" src="/worlds/WIT_2_Lab/assets/audio/Amb_Fan.ogg" preload="true"></audio>
         <audio id="Amb_voices-snd" src="/worlds/WIT_2_Lab/assets/audio/Amb_Voices.ogg" preload="true"></audio>
         <audio id="Amb_extractor-snd" src="/worlds/WIT_2_Lab/assets/audio/Amb_Extractor.ogg" preload="true"></audio>
+        <audio id="moxie-snd" src="/worlds/Spatium_Present/assets/audio/6_ThePresent.mp3"></audio>
+
 
         <!-- textures -->
         <img id='skyMap' src='/global/assets/textures/equirectangular/WhiteBlue.jpg' crossorigin="anonymous">
@@ -97,7 +99,7 @@
                                   title_back:Origin of its Name;
                                   description_back:Named after Greek and Roman gods and goddesses, Earth means 'the ground' in German. It is at least 1000 years old.;
                                   label_text:Tools;
-                                  audio:#Narr_tools-snd; volume:0.4;"></a-entity>
+                                  "></a-entity>
 
       <a-entity id="Artefact-Moxie"
                 class="interactive narrative"
@@ -108,11 +110,11 @@
                 circles-artefact="inspectScale:9 9 9; textRotationY:90; textLookAt:false; inspectRotation:0 0 0; inspectOffsetY:-0.1;
                                   label_visible:true; label_offset:0 0.35 0; arrow_position:down;
                                   title:MOXIE; 
-                                  description:The Mars Oxygen In-Situ Resource Utilization Experience, also known as MOXIE, was created to help NASA prepare for human exploration of Mars. Its main objective is to produce oxygen from Mars' atmosphere.;
+                                  description:The Mars Oxygen In-Situ Resource Utilization Experiment, also known as MOXIE, was created to help NASA prepare for human exploration of Mars. Its main objective is to produce oxygen from Mars' atmosphere.;
                                   title_back:Interesting Facts;
                                   description_back:Oxygen is rare on Mars, Fuel needs oxygen to burn, MOXIE makes oxygen out of thin air, and MOXIE is a tech demoonstration.;
                                   label_text:MOXIE;
-                                  audio:#Narr_safety-snd; volume:0.4;"></a-entity>
+                                  audio:#moxie-snd; volume:0.4;"></a-entity>
 
                                   
       <a-entity id="Artefact-JamesWebb"
@@ -128,7 +130,7 @@
                                   title_back:Telescope;
                                   description_back:Named after him in 2020, the James Webb Space Telescope was launched on December 25th, 2021 and was designed to answer questions about the Universe and make discoveries in astronomy.;
                                   label_text:James Webb;
-                                  audio:#Narr_safety-snd; volume:0.4;"></a-entity>
+                                  "></a-entity>
 
       <a-entity id="Artefact-MarsRover"
                 class="interactive narrative"
@@ -143,7 +145,7 @@
                                   title_back:Explore Feature;
                                   description_back:NASA currently has an interactive experience that allows users to explore some of the sites that the rover captured and studied. You can view raw images, listen to sounds, and even send your name to Mars.; 
                                   label_text:Mars Perseverance Rover;
-                                  audio:#Narr_safety-snd; volume:0.4;"></a-entity>
+                                  "></a-entity>
 
       <a-entity id="Artefact-Moon"
                 class="interactive narrative"
@@ -158,7 +160,7 @@
                                   title_back:Earth's Natural Satellite;
                                   description_back:The Moon is named after Earth's only natural satellite because people were not aware that other moons existed until Galileo's discovery of the four moons orbiting Jupiter in 1610.;
                                   label_text:Moon;
-                                  audio:#Narr_safety-snd; volume:0.4;"></a-entity>
+                                  "></a-entity>
 
       <a-entity id="Artefact-Mars"
                 position="-3.88 1.0 -39" rotation="0 30 0" scale="15 15 15"
@@ -172,7 +174,7 @@
                                   title_back:Interesting Facts;
                                   description_back:There are no rings around Mars, one day on Mars takes a little over 24 hours, and Mars has two moons named Phobos and Deimos.;
                                   label_text:Mars;
-                                  audio:#Narr_culture-snd; volume:0.4;"></a-entity>
+                                  "></a-entity>
                               
 
     <!-- Circles' end scripts [REQUIRED] -->
