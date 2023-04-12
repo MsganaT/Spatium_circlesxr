@@ -17,6 +17,7 @@
           el.addEventListener('die', () => {
             color.setRGB(1, 0, 0);
             el.components.material.material.color.copy(color);
+            el.setAttribute('visible', false);
           });
         }
       });
