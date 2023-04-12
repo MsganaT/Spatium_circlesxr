@@ -32,10 +32,14 @@
        <!-- <a-asset-item id="navmesh_gltf" src="/worlds/WIT_1_Kitchen/assets/models/wit-1-nav.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>-->
 
         <!-- artefact models -->
-        <a-asset-item id="americanflag-gltf" response-type="arraybuffer" src="/worlds/Spatium_Past/assets/models/usaflag.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id="americanflag-gltf" response-type="arraybuffer" src="/worlds/Spatium_Past/assets/models/flag.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id="astronaut-gltf" src="/worlds/Spatium_Past/assets/models/testAstronaut.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id="telescope-gltf" src="/worlds/Spatium_Past/assets/models/telescope.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id="solarsystem-gltf" src="/worlds/Spatium_Past/assets/models/solarsystem.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id="apollo-gltf" src="/worlds/Spatium_Past/assets/models/appollo7.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id="galileo-gltf" src="/worlds/Spatium_Past/assets/models/gallio.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+
+
 
         <video id="moon_landing-vid" src="/worlds/Spatium_Past/assets/moon_landing.mp4"></video>
 
@@ -86,11 +90,11 @@
       <a-entity id="Artefact-moon_landing" geometry="primitive: plane" position="-1.2 4 -3" rotation="13 0 0" material=" side:double src:#moon_landing-vid" ></a-entity>
 
       <a-entity id="Artefact-Telescope"
-                position="13.5 1.5 -50" rotation="0 30 0" scale="0.5 0.5 0.5"
-                geometry="primitive: box;"
+                position="13.5 1.5 -50" rotation="0 30 0" scale="15 15 15"
+                gltf-model="#telescope-gltf"
                 shadow="receive:false; cast:false;"
                 circles-sphere-env-map="src:/global/assets/textures/equirectangular/WhiteBlue.jpg"
-                circles-artefact="inspectScale: 0.8 0.8 0.8; textRotationY:0; textLookAt:false; inspectRotation:0 90 0; inspectOffsetY:-0.2;
+                circles-artefact="inspectScale: 9 9 9; textRotationY:0; textLookAt:false; inspectRotation:0 90 0; inspectOffsetY:-0.2;
                                   label_visible:true; label_offset:0 2 0; arrow_position:down;
                                   title:Craters on the Moon; 
                                   description:Galileo enhanced the telescope and allowed the machine to view the Moon’s craters and the moons surrounding Jupiter! During his time, many people believed that the Earth was the center of the universe and everything revolved around the planet.';
@@ -100,30 +104,30 @@
                                   "></a-entity>
 
       <a-entity id="Artefact-Galileo"
-                position="-1.7 1.5 -50" rotation="0 30 0" scale="0.5 0.5 0.5"
-                geometry="primitive: box;" 
+                position="-1.7 2 -50" rotation="0 30 0" scale="0.09 0.09 0.09"
+                gltf-model="#galileo-gltf"
                 shadow="receive:false; cast:false;"
                 circles-sphere-env-map="src:/global/assets/textures/equirectangular/WhiteBlue.jpg"
-                circles-artefact="inspectScale: 0.8 0.8 0.8; textRotationY:0; textLookAt:false; inspectRotation:0 90 0; inspectOffsetY:-0.2;
+                circles-artefact="inspectScale: 0.07 0.07 0.07; textRotationY:0; textLookAt:false; inspectRotation:0 90 0; inspectOffsetY:-0.2;
                                   label_visible:true; label_offset:0 2 0; arrow_position:down;
                                   title:Galileo; 
-                                  description:Galileo enhanced the telescope and allowed the machine to view the Moon’s craters and the moons surrounding Jupiter! During his time, many people believed that the Earth was the center of the universe and everything revolved around the planet.';
-                                  title_back:Understanding Space;
-                                  description_back: By viewing the moons surrounding Jupiter and Venus’ phases, Galileo was able to explain that the planets are indeed moving around the sun, not the Earth. This created a massive discovery for the science and space exploration world and provided a better understanding on how the universe works.;
+                                  description:Galileo di Vincenzo Bonaiuti de' Galleli was an Italian astronomer, physicist and engineer born in Pisa, Italy in 1564. He was famous for inventing the refracting telescope, which allowed him to see with a magnification of 8 or 9 times.;
+                                  title_back:Galileo's Discovery;
+                                  description_back: Galileo discovered many elements of space such as craters on the moon, the phases of Venus, Jupiter's moons, the Milky Way stars, and the first pendulum clock.;
                                   label_text:Galileo;
                                   "></a-entity>
 
       <a-entity id="Artefact-Flag"
-                position="6 1.3 -34.2" rotation="0 30 0" scale="0.5 0.5 0.5"
-                geometry="primitive: box;" 
+                position="6 1.5 -34.2" rotation="0 30 0" scale="15 15 15"
+                gltf-model="#americanflag-gltf"
                 shadow="receive:false; cast:false;"
                 circles-sphere-env-map="src:/global/assets/textures/equirectangular/WhiteBlue.jpg"
-                circles-artefact="inspectScale: 0.8 0.8 0.8; textRotationY:0; textLookAt:false; inspectRotation:0 90 0; inspectOffsetY:-0.2;
+                circles-artefact="inspectScale: 9 9 9; textRotationY:0; textLookAt:false; inspectRotation:0 90 0; inspectOffsetY:-0.2;
                                   label_visible:true; label_offset:0 2 0; arrow_position:down;
                                   title:American Flag; 
-                                  description:Galileo enhanced the telescope and allowed the machine to view the Moon’s craters and the moons surrounding Jupiter! During his time, many people believed that the Earth was the center of the universe and everything revolved around the planet.';
-                                  title_back:Understanding Space;
-                                  description_back: By viewing the moons surrounding Jupiter and Venus’ phases, Galileo was able to explain that the planets are indeed moving around the sun, not the Earth. This created a massive discovery for the science and space exploration world and provided a better understanding on how the universe works.;
+                                  description:On July 20, 1969, when NASA sent astronauts Neil Armstrong and Edwin Aldrin to space, they marked the monumental achievement by planting an American flag on the Moon. This was to honour every taxpayer who contributed to the Apollo program.;
+                                  title_back:Conspiracy Theory;
+                                  description_back:The flag planting sparked scrunity and specticism due to the flag flapping as if it was in the wind. This led conspiracy theorists to claim that the Moon landing was a hoax. According to some, the flag's movements were caused by the astronauts, not wind.;
                                   label_text:American Flag;
                                   "></a-entity>
 
@@ -134,11 +138,11 @@
                 circles-sphere-env-map="src:/global/assets/textures/equirectangular/WhiteBlue.jpg"
                 circles-artefact="inspectScale: 9 9 9; textRotationY:0; textLookAt:false; inspectRotation:0 90 0; inspectOffsetY:-0.2;
                                                     label_visible:true; label_offset:0 2 0; arrow_position:down;
-                                                    title:Solar Planet; 
-                                                    description:Galileo enhanced the telescope and allowed the machine to view the Moon’s craters and the moons surrounding Jupiter! During his time, many people believed that the Earth was the center of the universe and everything revolved around the planet.';
-                                                    title_back:Understanding Space;
-                                                    description_back: By viewing the moons surrounding Jupiter and Venus’ phases, Galileo was able to explain that the planets are indeed moving around the sun, not the Earth. This created a massive discovery for the science and space exploration world and provided a better understanding on how the universe works.;
-                                                    label_text:Solar Planet;
+                                                    title:Solar System; 
+                                                    description:This figurine represents the solar system, which consists of Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.;
+                                                    title_back:Origin of the Name;
+                                                    description_back:The word 'solar' is used to describe things related to our star. The word 'sun' is derived from the Latin word, 'solis'.;
+                                                    label_text:Solar System;
                                                     "></a-entity>
 
       <a-entity id="Artefact-Astronaut"
@@ -148,24 +152,24 @@
                 circles-sphere-env-map="src:/global/assets/textures/equirectangular/WhiteBlue.jpg"
                 circles-artefact="inspectScale: 9 9 9; textRotationY:0; textLookAt:false; inspectRotation:0 90 0; inspectOffsetY:-0.2;
                                   label_visible:true; label_offset:0 2 0; arrow_position:down;
-                                  title:Astronaut; 
-                                  description:Galileo enhanced the telescope and allowed the machine to view the Moon’s craters and the moons surrounding Jupiter! During his time, many people believed that the Earth was the center of the universe and everything revolved around the planet.';
-                                  title_back:Understanding Space;
-                                  description_back: By viewing the moons surrounding Jupiter and Venus’ phases, Galileo was able to explain that the planets are indeed moving around the sun, not the Earth. This created a massive discovery for the science and space exploration world and provided a better understanding on how the universe works.;
+                                  title:Astronauts; 
+                                  description:This little figurine is to symbolize the two U.S. astronauts that landed on the moon on July 20th, 1969. Neil Armstrong and Edwin 'Buzz' Aldrin became the first human beings to walk on the moon;
+                                  title_back:Famous Words;
+                                  description_back:'That's one small step for a man, one giant leap for mankind';
                                   label_text:Astronaut;
                                   "></a-entity>
 
       <a-entity id="Artefact-Apollo"
-                position="-3.88 0.8 -39" rotation="0 30 0" scale="0.5 0.5 0.5"
-                geometry="primitive: box;"
+                position="-3.88 0.8 -39" rotation="0 30 0" scale="15 15 15"
+                gltf-model="#apollo-gltf"
                 shadow="receive:false; cast:false;"
                 circles-sphere-env-map="src:/global/assets/textures/equirectangular/WhiteBlue.jpg"
-                circles-artefact="inspectScale: 0.8 0.8 0.8; textRotationY:0; textLookAt:false; inspectRotation:0 90 0; inspectOffsetY:-0.2;
+                circles-artefact="inspectScale: 9 9 9; textRotationY:0; textLookAt:false; inspectRotation:0 90 0; inspectOffsetY:-0.2;
                                   label_visible:true; label_offset:0 2 0; arrow_position:down;
-                                  title:Apollo; 
-                                  description:Galileo enhanced the telescope and allowed the machine to view the Moon’s craters and the moons surrounding Jupiter! During his time, many people believed that the Earth was the center of the universe and everything revolved around the planet.';
-                                  title_back:Understanding Space;
-                                  description_back: By viewing the moons surrounding Jupiter and Venus’ phases, Galileo was able to explain that the planets are indeed moving around the sun, not the Earth. This created a massive discovery for the science and space exploration world and provided a better understanding on how the universe works.;
+                                  title:Apollo 11 Rocket; 
+                                  description:The Apollo 11 was the U.S. spaceflight that launched from Cape Kennedy to take the astronauts to the Moon in 1969. ;
+                                  title_back:Apollo 11 on the Moon;
+                                  description_back:The Apollo 11 spaceship was on the Moon for more than 21 hours.;
                                   label_text:Apollo;
                                   "></a-entity>
                   

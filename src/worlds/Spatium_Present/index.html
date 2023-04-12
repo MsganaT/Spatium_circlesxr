@@ -1,0 +1,185 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <!-- Circles' head scripts [REQUIRED] -->
+    <circles-start-scripts/>
+
+    <!-- add your custom scripts here -->
+    <!-- <script src="/worlds/hub/scripts/hub.js"></script> -->
+  </head>
+  <body>
+    <!-- this is used to create our enter UI that creates a 2D overlay to capture a user gesture for sound/mic access etc. -->
+    <circles-start-ui/>
+
+    <!-- a-scene with 'circles-properties' component [REQUIRED] -->
+    <a-scene circles_scene_properties>
+      <a-assets timeout="10000">
+        <!-- add your assets here -->
+
+        <!-- audio -->
+        
+        <!-- narration -->
+      
+        <!-- 360 -->
+        <img id='link_1_360'        src='/global/images/Campfire_Screen.jpg' crossorigin="anonymous">
+
+        <a-asset-item id="earth-gltf" response-type="arraybuffer" src="/worlds/Spatium_Present/assets/models/earth.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id="mars-gltf" src="/worlds/Spatium_Past/assets/models/mars.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id="marsrover-gltf" src="/worlds/Spatium_Past/assets/models/marscar.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id="moxie-gltf" src="/worlds/Spatium_Past/assets/models/moxies.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id="moon-gltf" src="/worlds/Spatium_Past/assets/models/moon.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <a-asset-item id="jameswebb-gltf" src="/worlds/Spatium_Past/assets/models/james_webb.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+
+
+        <!-- ambience -->
+        <!-- 
+          ATTRIBUTION:
+          Amb_fan-snd: https://freesound.org/people/Gremsongs/sounds/130745/ 
+          Amb_voices-snd: https://freesound.org/people/dobroide/sounds/35039/ 
+          Amb_extractor-snd: https://freesound.org/people/zigzagzen/sounds/168073/
+        -->
+        <audio id="Amb_fan-snd" src="/worlds/WIT_2_Lab/assets/audio/Amb_Fan.ogg" preload="true"></audio>
+        <audio id="Amb_voices-snd" src="/worlds/WIT_2_Lab/assets/audio/Amb_Voices.ogg" preload="true"></audio>
+        <audio id="Amb_extractor-snd" src="/worlds/WIT_2_Lab/assets/audio/Amb_Extractor.ogg" preload="true"></audio>
+
+        <!-- textures -->
+        <img id='skyMap' src='/global/assets/textures/equirectangular/WhiteBlue.jpg' crossorigin="anonymous">
+
+        <!-- physical environment -->
+        <a-asset-item id="presentroom-gltf" response-type="arraybuffer" src="/worlds/Spatium_Present/assets/models/presentroom.glb"></a-asset-item>
+        
+
+        <!-- artefact models -->
+
+
+        <!-- Circles' built-in assets [REQUIRED] -->
+        <circles-assets/>
+      </a-assets>
+
+      <!-- Circles' built-in manager and avatar [REQUIRED] -->
+      <circles-manager-avatar/>
+
+      <!-- checkpoints -->
+      <a-entity circles-checkpoint circles-spawnpoint position="15 0.05 -2.0"></a-entity>
+      <a-entity circles-checkpoint circles-spawnpoint position="6 0.05 -7.5"></a-entity>
+
+      <a-entity circles-checkpoint circles-spawnpoint position="-1.0 0.05 -3"></a-entity>
+      <a-entity circles-checkpoint circles-spawnpoint position="-3.88 0.05 3.7"></a-entity>
+      <a-entity circles-checkpoint circles-spawnpoint position="16.5 0.05 4.6"></a-entity>
+      <a-entity circles-checkpoint circles-spawnpoint position="6.549 0.05 7.2"></a-entity>
+
+      <!-- sky and lights -->
+      <a-entity light="type:ambient; color:#FFF; intensity:1.0"></a-entity>
+
+      <!-- sounds -->
+    
+
+      <!-- environment / models -->
+     
+
+      <!-- artefacts -->
+      <a-entity id="Artefact-Earth"
+                position="15 1.5 -4.0" rotation="0 30 0" scale="15 15 15"
+                gltf-model="#earth-gltf"
+                shadow="receive:false; cast:false;"
+                circles-sphere-env-map="src:/global/assets/textures/equirectangular/WhiteBlue.jpg"
+                circles-artefact="inspectScale:9 9 9; textRotationY:0; textLookAt:false; inspectRotation:0 90 0; inspectOffsetY:-0.2;
+                                  label_visible:true; label_offset:0 0.4 0; arrow_position:down;
+                                  title:Planet Earth; 
+                                  description:The third planet from the Sun, Earth is our home planet and the only planet we know so far that is inhabited by living creatures. It is also the only planet that has liquid water on its surface.;
+                                  title_back:Origin of its Name;
+                                  description_back:Named after Greek and Roman gods and goddesses, Earth means 'the ground' in German. It is at least 1000 years old.;
+                                  label_text:Tools;
+                                  audio:#Narr_tools-snd; volume:0.4;"></a-entity>
+
+      <a-entity id="Artefact-Moxie"
+                class="interactive narrative"
+                position="6 0.8 -9.5" rotation="0 30 0" scale="15 15 15"               
+                gltf-model="#moxie-gltf"
+                shadow="receive:false; cast:false;"
+                circles-sphere-env-map="src:/global/assets/textures/equirectangular/WhiteBlue.jpg"
+                circles-artefact="inspectScale:9 9 9; textRotationY:90; textLookAt:false; inspectRotation:0 0 0; inspectOffsetY:-0.1;
+                                  label_visible:true; label_offset:0 0.35 0; arrow_position:down;
+                                  title:MOXIE; 
+                                  description:The Mars Oxygen In-Situ Resource Utilization Experience, also known as MOXIE, was created to help NASA prepare for human exploration of Mars. Its main objective is to produce oxygen from Mars' atmosphere.;
+                                  title_back:Interesting Facts;
+                                  description_back:Oxygen is rare on Mars, Fuel needs oxygen to burn, MOXIE makes oxygen out of thin air, and MOXIE is a tech demoonstration.;
+                                  label_text:MOXIE;
+                                  audio:#Narr_safety-snd; volume:0.4;"></a-entity>
+
+                                  
+      <a-entity id="Artefact-JamesWebb"
+                class="interactive narrative"
+                position="-1.0 1.5 -5" rotation="0 30 0" scale="15 15 15"               
+                gltf-model="#jameswebb-gltf"
+                shadow="receive:false; cast:false;"
+                circles-sphere-env-map="src:/global/assets/textures/equirectangular/WhiteBlue.jpg"
+                circles-artefact="inspectScale:9 9 9; textRotationY:90; textLookAt:false; inspectRotation:0 0 0; inspectOffsetY:-0.1;
+                                  label_visible:true; label_offset:0 0.35 0; arrow_position:down;
+                                  title:James Webb; 
+                                  description:James Edwin Webb '(1902-1992)' was an American government official that led NASA from the beginning of the Kennedy administration to the end of the Johnson administration. He helped oversee the Mercury and Gemini programs days before the Apollo 11 mission.;
+                                  title_back:Telescope
+                                  description_back:Named after him in 2020, the James Webb Space Telescope was launched on December 25th, 2021 and was designed to answer questions about the Universe and make discoveries in astronomy.;
+                                  label_text:James Webb;
+                                  audio:#Narr_safety-snd; volume:0.4;"></a-entity>
+
+      <a-entity id="Artefact-MarsRover"
+                class="interactive narrative"
+                position="-3.88 1.5 6.7" rotation="0 30 0" scale="15 15 15"               
+                gltf-model="#marsrover-gltf"
+                shadow="receive:false; cast:false;"
+                circles-sphere-env-map="src:/global/assets/textures/equirectangular/WhiteBlue.jpg"
+                circles-artefact="inspectScale:9 9 9; textRotationY:90; textLookAt:false; inspectRotation:0 0 0; inspectOffsetY:-0.1;
+                                  label_visible:true; label_offset:0 0.35 0; arrow_position:down;
+                                  title: 2020 Perseverance Rover; 
+                                  description:On July 30th, 2020, NASA launched the Mars Rover named Perseverance. It landed on Jezero Crater, Mars on February 18th, 2021. Its main objective was to seek signs of ancient life and collect samples of broken rock and soil to take back to Earth.;
+                                  title_back:Explore Feature;
+                                  description_back:NASA currently has an interactive experience that allows users to explore some of the sites that the rover captured and studied. You can view raw images, listen to sounds, and even send your name to Mars.; 
+                                  label_text:Mars Perseverance Rover;
+                                  audio:#Narr_safety-snd; volume:0.4;"></a-entity>
+
+      <a-entity id="Artefact-Moon"
+                class="interactive narrative"
+                position="16.5 0.8 6.6" rotation="0 30 0" scale="15 15 15"               
+                gltf-model="#moon-gltf"
+                shadow="receive:false; cast:false;"
+                circles-sphere-env-map="src:/global/assets/textures/equirectangular/WhiteBlue.jpg"
+                circles-artefact="inspectScale:9 9 9; textRotationY:90; textLookAt:false; inspectRotation:0 0 0; inspectOffsetY:-0.1;
+                                  label_visible:true; label_offset:0 0.35 0; arrow_position:down;
+                                  title:Moon; 
+                                  description:The brightest and largest planet that we can see at night, the Moon is the fifth largest planet in the solar system and the only place beyond Earth that humans have landed on.;
+                                  title_back:Earth's Natural Satellite;
+                                  description_back:The Moon is named after Earth's only natural satellite because people were not aware that other moons existed until Galileo's discovery of the four moons orbiting Jupiter in 1610.;
+                                  label_text:Moon;
+                                  audio:#Narr_safety-snd; volume:0.4;"></a-entity>
+
+      <a-entity id="Artefact-Mars"
+                position="6.549 2.5 11.2" rotation="0 30 0" scale="15 15 15"
+                gltf-model="#mars-gltf"
+                shadow="receive:false; cast:false;"
+                circles-sphere-env-map="src:/global/assets/textures/equirectangular/WhiteBlue.jpg"
+                circles-artefact="inspectScale:9 9 9; textRotationY:0; textLookAt:false; inspectRotation:0 90 0; inspectOffsetY:-0.2;
+                                  label_visible:true; label_offset:0 0.4 0; arrow_position:down;
+                                  title:Planet Earth; 
+                                  description:The fourth planet from the Sun, Mars is a cold and dusty deserted planet with seasons, polar ice caps, canyons, and extinct volcanoes. It is one of the most explored bodies in our solar system.;
+                                  title_back:Interesting Facts;
+                                  description_back:There are no rings around Mars, one day on Mars takes a little over 24 hours, and Mars has two moons named Phobos and Deimos.;
+                                  label_text:Mars;
+                                  audio:#Narr_culture-snd; volume:0.4;"></a-entity>
+                                
+
+
+
+    
+    <a-entity id="hub_link"
+                position="6.549 1.347 4.864" rotation="0 143.672 0"  scale="1 1 1"
+                circles-portal="img_src:#link_1_360; title_text:Spatium Hub; link_url:/w/Spatium_Hub"></a-entity>
+
+    <a-entity id="presentroom_model" gltf-model="#presentroom-gltf" circles-sphere-env-map="src:/global/assets/textures/equirectangular/WhiteBlue.jpg"  position="5.919 0 1.291" scale="25 25 25"></a-entity>
+
+
+    <!-- Circles' end scripts [REQUIRED] -->
+    <circles-end-scripts/>
+  </body>
+</html>
