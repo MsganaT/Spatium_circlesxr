@@ -14,24 +14,17 @@
 
     <!-- a-scene with 'circles-properties' component [REQUIRED] -->
     <a-scene circles_scene_properties>
-      <a-assets>
+      <a-assets timeout="10000">
         <!-- add your assets here -->
-        <img id='map1'    src='/worlds/Spatium_Past/file2.png' crossorigin="anonymous">
-        <img id="sky" src="/worlds/Spatium_Past/stars.jpg">
 
-
-        <!-- Structural Environment Assests -->
-        <a-asset-item id="untitled-gltf" response-type="arraybuffer" src="/worlds/Spatium_Past/moon_-_petavius_crater.glb"></a-asset-item>
-        <a-asset-item id="past_room-gltf" src="/worlds/Spatium_Past/assets/models/pastroom.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        <!-- audio -->
         
-
-        <!-- physical environment -->
+        <!-- narration -->
+      
         <!-- 360 -->
-        <img id='link_1_360'        src='/worlds/Spatium_Hub/hub.png' crossorigin="anonymous">
+        <img id='link_1_360'        src='/global/images/Campfire_Screen.jpg' crossorigin="anonymous">
+        <a-asset-item id="past_room-gltf" src="/worlds/Spatium_Present/assets/models/pastroom.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
 
-       <!-- <a-asset-item id="navmesh_gltf" src="/worlds/WIT_1_Kitchen/assets/models/wit-1-nav.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>-->
-
-        <!-- artefact models -->
         <a-asset-item id="americanflag-gltf" response-type="arraybuffer" src="/worlds/Spatium_Past/assets/models/flag.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id="astronaut-gltf" src="/worlds/Spatium_Past/assets/models/testAstronaut.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id="telescope-gltf" src="/worlds/Spatium_Past/assets/models/telescope.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
@@ -39,28 +32,27 @@
         <a-asset-item id="apollo-gltf" src="/worlds/Spatium_Past/assets/models/appollo7.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
         <a-asset-item id="galileo-gltf" src="/worlds/Spatium_Past/assets/models/gallio.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
 
-
-
         <video id="moon_landing-vid" src="/worlds/Spatium_Past/assets/moon_landing.mp4"></video>
 
-        <!-- audio -->
+
+        <!-- ambience -->
         <audio id="hub_music-snd" src="/worlds/Spatium_Hub/assets/the_past_music.mp3" preload="true"></audio>
         <audio id="past_music-snd" src="/worlds/Spatium_Past/assets/audio/3_past.mp3" preload="true"></audio>
         <audio id="galileo-snd" src="/worlds/Spatium_Past/assets/audio/4_ThePast.mp3"></audio>
         <audio id="apollo7-snd" src="/worlds/Spatium_Past/assets/audio/5_ThePastPart2.mp3"></audio>
 
+        <!-- textures -->
+        <img id='skyMap' src='/global/assets/textures/equirectangular/WhiteBlue.jpg' crossorigin="anonymous">
+
+        <!-- physical environment -->
+       
+
+        <!-- artefact models -->
 
 
         <!-- Circles' built-in assets [REQUIRED] -->
         <circles-assets/>
       </a-assets>
-
-      <!-- ////////////////////// END OF ASSETS ////////////////////////////////   -->
-
-
-
-      <a-sky src="#sky"></a-sky>
-
 
       <!-- Circles' built-in manager and avatar [REQUIRED] -->
       <circles-manager-avatar/>
@@ -74,35 +66,30 @@
       <a-entity circles-checkpoint circles-spawnpoint position="16.5 0.05 -50"></a-entity>
 
       <!-- sky and lights -->
-      <!-- bad place for narrative manager but :) -->
       <a-entity light="type:ambient; color:#FFF; intensity:1.0"></a-entity>
 
       <!-- sounds -->
-
       <a-entity position=" 5 1 -10" circles-sound="type:ambient; src:#hub_music-snd; autoplay:true; loop:true; volume:0.2;" ></a-entity>
       <a-entity position=" 5 1 -10" circles-sound="type:ambient; src:#past_music-snd; autoplay:true; loop:false; volume:1.0;" ></a-entity>
+    
 
-      
       <!-- environment / models -->
-     <a-entity id="Room_Model" gltf-model="#past_room-gltf"  img src="/worlds/Spatium_Past/file14.png" img src="/worlds/Spatium_Past/file13.png" img src="/worlds/Spatium_Past/file15.png" img src="/worlds/Spatium_Past/file16.png" circles-sphere-env-map="src:/global/assets/textures/equirectangular/WhiteBlue.jpg"  position="5.919 0 1.291" scale="25 25 25"></a-entity>
+      <a-entity id="Room_Model" gltf-model="#past_room-gltf"  img src="/worlds/Spatium_Past/file14.png" img src="/worlds/Spatium_Past/file13.png" img src="/worlds/Spatium_Past/file15.png" img src="/worlds/Spatium_Past/file16.png" circles-sphere-env-map="src:/global/assets/textures/equirectangular/WhiteBlue.jpg"  position="5.919 0 1.291" scale="25 25 25"></a-entity>
 
       <a-entity id="hub_link"
-                position="6 3.5 -45" rotation="0 180 0" scale="1 1 1"
-                
-                circles-portal="img_src:#link_1_360; title_text:Space Defender; link_url:/w/Spatium_ShooterGame"></a-entity>
+      position="6 3.5 -45" rotation="0 180 0" scale="1 1 1"
+      
+      circles-portal="img_src:#link_1_360; title_text:Space Defender; link_url:/w/Spatium_ShooterGame"></a-entity>
+     
 
-
-      <!-- Artefacts -->
-
-      <a-entity id="Artefact-moon_landing" geometry="primitive: plane" position="-1.2 4 -3" rotation="13 0 0" material=" side:double src:#moon_landing-vid" ></a-entity>
-
+      <!-- artefacts -->
       <a-entity id="Artefact-Telescope"
                 position="13.5 1.5 -50" rotation="0 30 0" scale="15 15 15"
                 gltf-model="#telescope-gltf"
                 shadow="receive:false; cast:false;"
                 circles-sphere-env-map="src:/global/assets/textures/equirectangular/WhiteBlue.jpg"
-                circles-artefact="inspectScale: 9 9 9; textRotationY:0; textLookAt:false; inspectRotation:0 90 0; inspectOffsetY:-0.2;
-                                  label_visible:true; label_offset:0 2 0; arrow_position:down;
+                circles-artefact="inspectScale:9 9 9; textRotationY:0; textLookAt:false; inspectRotation:0 90 0; inspectOffsetY:-0.2;
+                                  label_visible:true; label_offset:0 0.4 0; arrow_position:down;
                                   title:Craters on the Moon; 
                                   description:Galileo enhanced the telescope and allowed the machine to view the Moon’s craters and the moons surrounding Jupiter! During his time, many people believed that the Earth was the center of the universe and everything revolved around the planet.';
                                   title_back:Understanding Space;
@@ -111,28 +98,30 @@
                                   "></a-entity>
 
       <a-entity id="Artefact-Galileo"
-                position="-1.7 2 -50" rotation="0 30 0" scale="0.09 0.09 0.09"
+                class="interactive narrative"
+                position="-1.7 2 -50" rotation="0 30 0" scale="15 15 15"               
                 gltf-model="#galileo-gltf"
                 shadow="receive:false; cast:false;"
                 circles-sphere-env-map="src:/global/assets/textures/equirectangular/WhiteBlue.jpg"
-                circles-artefact="inspectScale: 0.07 0.07 0.07; textRotationY:0; textLookAt:false; inspectRotation:0 90 0; inspectOffsetY:-0.2;
-                                  label_visible:true; label_offset:0 2 0; arrow_position:down;
-                                  title:Galileo; 
-                                  description:Galileo di Vincenzo Bonaiuti de' Galleli was an Italian astronomer, physicist and engineer born in Pisa, Italy in 1564. He was famous for inventing the refracting telescope, which allowed him to see with a magnification of 8 or 9 times.;
+                circles-artefact="inspectScale:9 9 9; textRotationY:90; textLookAt:false; inspectRotation:0 0 0; inspectOffsetY:-0.1;
+                                  label_visible:true; label_offset:0 0.35 0; arrow_position:down;
+                                  title:Galileo Galilei; 
+                                  description:Galileo proposed many ideas to the science community and discovered revolutionary findings! His most known discoveries include the telescope, craters on the moon, and proposed the idea that Earth was not the center of the universe! ;
                                   title_back:Galileo's Discovery;
-                                  description_back: Galileo discovered many elements of space such as craters on the moon, the phases of Venus, Jupiter's moons, the Milky Way stars, and the first pendulum clock.;
+                                  description_back:Galileo enhanced the telescope and allowed the machine to view the Moon’s craters and the moons surrounding Jupiter!During his time, many people believed that the Earth was the center of the universe and everything revolved around the planet. Galileo was able to explain that the planets are indeed moving around the sun, not the Earth.;
                                   label_text:Galileo;
                                   audio:#galileo-snd;
-                                  volume:0.3;
-                                  "></a-entity>
+                                  volume:0.3;"></a-entity>
 
+                                  
       <a-entity id="Artefact-Flag"
-                position="6 1.5 -34.2" rotation="0 30 0" scale="15 15 15"
+                class="interactive narrative"
+                position="6 1.5 -34.2" rotation="0 30 0" scale="15 15 15"               
                 gltf-model="#americanflag-gltf"
                 shadow="receive:false; cast:false;"
                 circles-sphere-env-map="src:/global/assets/textures/equirectangular/WhiteBlue.jpg"
-                circles-artefact="inspectScale: 9 9 9; textRotationY:0; textLookAt:false; inspectRotation:0 90 0; inspectOffsetY:-0.2;
-                                  label_visible:true; label_offset:0 2 0; arrow_position:down;
+                circles-artefact="inspectScale:9 9 9; textRotationY:90; textLookAt:false; inspectRotation:0 0 0; inspectOffsetY:-0.1;
+                                  label_visible:true; label_offset:0 0.35 0; arrow_position:down;
                                   title:American Flag; 
                                   description:On July 20, 1969, when NASA sent astronauts Neil Armstrong and Edwin Aldrin to space, they marked the monumental achievement by planting an American flag on the Moon. This was to honour every taxpayer who contributed to the Apollo program.;
                                   title_back:Conspiracy Theory;
@@ -141,26 +130,28 @@
                                   "></a-entity>
 
       <a-entity id="Artefact-Planet"
-                position="6 0.8 -56" rotation="0 30 0" scale="15 15 15"
+                class="interactive narrative"
+                position="6 0.8 -56" rotation="0 30 0" scale="15 15 15"               
                 gltf-model="#solarsystem-gltf"
                 shadow="receive:false; cast:false;"
                 circles-sphere-env-map="src:/global/assets/textures/equirectangular/WhiteBlue.jpg"
-                circles-artefact="inspectScale: 9 9 9; textRotationY:0; textLookAt:false; inspectRotation:0 90 0; inspectOffsetY:-0.2;
-                                                    label_visible:true; label_offset:0 2 0; arrow_position:down;
-                                                    title:Solar System; 
-                                                    description:This figurine represents the solar system, which consists of Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.;
-                                                    title_back:Origin of the Name;
-                                                    description_back:The word 'solar' is used to describe things related to our star. The word 'sun' is derived from the Latin word, 'solis'.;
-                                                    label_text:Solar System;
-                                                    "></a-entity>
+                circles-artefact="inspectScale:9 9 9; textRotationY:90; textLookAt:false; inspectRotation:0 0 0; inspectOffsetY:-0.1;
+                                  label_visible:true; label_offset:0 0.35 0; arrow_position:down;
+                                  title:Solar System; 
+                                  description:This figurine represents the solar system, which consists of Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.;
+                                  title_back:Origin of the Name;
+                                  description_back:The word 'solar' is used to describe things related to our star. The word 'sun' is derived from the Latin word, 'solis'.;
+                                  label_text:Solar System;
+                                  "></a-entity>
 
       <a-entity id="Artefact-Astronaut"
-                position="15.5 0.8 -39" rotation="0 30 0" scale="15 15 15"
+                class="interactive narrative"
+                position="15.5 1.0 -39" rotation="0 30 0" scale="15 15 15"               
                 gltf-model="#astronaut-gltf"
                 shadow="receive:false; cast:false;"
                 circles-sphere-env-map="src:/global/assets/textures/equirectangular/WhiteBlue.jpg"
-                circles-artefact="inspectScale: 9 9 9; textRotationY:0; textLookAt:false; inspectRotation:0 90 0; inspectOffsetY:-0.2;
-                                  label_visible:true; label_offset:0 2 0; arrow_position:down;
+                circles-artefact="inspectScale:9 9 9; textRotationY:90; textLookAt:false; inspectRotation:0 0 0; inspectOffsetY:-0.1;
+                                  label_visible:true; label_offset:0 0.35 0; arrow_position:down;
                                   title:Astronauts; 
                                   description:This little figurine is to symbolize the two U.S. astronauts that landed on the moon on July 20th, 1969. Neil Armstrong and Edwin 'Buzz' Aldrin became the first human beings to walk on the moon;
                                   title_back:Famous Words;
@@ -169,23 +160,21 @@
                                   "></a-entity>
 
       <a-entity id="Artefact-Apollo"
-                position="-3.88 0.8 -39" rotation="0 30 0" scale="15 15 15"
+                position="-3.88 1.0 -39" rotation="0 30 0" scale="15 15 15"
                 gltf-model="#apollo-gltf"
                 shadow="receive:false; cast:false;"
                 circles-sphere-env-map="src:/global/assets/textures/equirectangular/WhiteBlue.jpg"
-                circles-artefact="inspectScale: 9 9 9; textRotationY:0; textLookAt:false; inspectRotation:0 90 0; inspectOffsetY:-0.2;
-                                  label_visible:true; label_offset:0 2 0; arrow_position:down;
+                circles-artefact="inspectScale:9 9 9; textRotationY:0; textLookAt:false; inspectRotation:0 90 0; inspectOffsetY:-0.2;
+                                  label_visible:true; label_offset:0 0.7 0; arrow_position:down;
                                   title:Apollo 11 Rocket; 
-                                  description:The Apollo 11 was the U.S. spaceflight that launched from Cape Kennedy to take the astronauts to the Moon in 1969. ;
+                                  description:Apollo 11 is about to launch and the world is about to witness a revolutionary moment. It took 3 days for Neil Armstrong and Edwin ‘Buzz’ Aldrin to land on the moon and take their first steps on the Lunar surface.;
                                   title_back:Apollo 11 on the Moon;
-                                  description_back:The Apollo 11 spaceship was on the Moon for more than 21 hours.;
+                                  description_back:After spending 2 hours on the surface, the two astronauts were able to take photos, conduct experiments, collect rocks, and place the American flag on the surface before returning home safely.;
                                   label_text:Apollo;
                                   audio:#apollo7-snd;
                                   volume:0.3;
                                   "></a-entity>
-                  
-      
-    </a-scene>
+                              
 
     <!-- Circles' end scripts [REQUIRED] -->
     <circles-end-scripts/>
